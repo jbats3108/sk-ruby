@@ -1,63 +1,22 @@
 
 #define Superhero Parent Class
 class Superhero
-  def set_code_name=(hero_code_name)
-    @code_name = hero_code_name
-  end
 
-  def get_code_name
-    return @code_name
-  end
-
-  def set_real_name=(hero_real_name)
-    @real_name = hero_real_name
-  end
-
-  def get_real_name
-    return @real_name
-  end
+  attr_accessor :code_name, :real_name
 
 end
 
 #Define child class Speedster
 class Speedster < Superhero
 
-  def set_speedster_alignment=(speedster_alignment)
-    @alignment = speedster_alignment
-  end
-
-  def get_speedster_alignment
-    return @alignment
-  end
-
-  def set_suit_color=(speedster_suit_color)
-    @suit_color = speedster_suit_color
-  end
-
-  def get_suit_color
-    return @suit_color
-  end
+  attr_accessor :alignment, :suit_color
 
 end
 
 #Define child class Human
 class Human < Superhero
 
-  def set_human_origin=(human_origin)
-    @origin = human_origin
-  end
-
-  def get_human_origin
-    return @origin
-  end
-
-  def set_human_weapon=(human_weapon)
-    @weapon = human_weapon
-  end
-
-  def get_human_weapon
-    return @weapon
-  end
+  attr_accessor :origin, :weapon
 
 end
 
@@ -67,40 +26,40 @@ end
   the_flash = Speedster.new
 
   #set and get code name
-  the_flash.set_code_name=("The Flash")
-  flash_code = the_flash.get_code_name
+  the_flash.code_name=("The Flash")
+  flash_code = the_flash.code_name
 
   #set and get real name
-  the_flash.set_real_name=("Barry Allen")
-  flash_real = the_flash.get_real_name
+  the_flash.real_name=("Barry Allen")
+  flash_real = the_flash.real_name
 
   #set and get alignment
-  the_flash.set_speedster_alignment=("good")
-  flash_align = the_flash.get_speedster_alignment
+  the_flash.alignment=("good")
+  flash_align = the_flash.alignment
 
   #set and get suit color
-  the_flash.set_suit_color=("Red")
-  flash_suit = the_flash.get_suit_color
+  the_flash.suit_color=("Red")
+  flash_suit = the_flash.suit_color
 
   ###
   #create reverse flash
   reverse_flash = Speedster.new
 
   #set and get code name
-  reverse_flash.set_code_name=("The Reverse Flash")
-  reverse_flash_code = reverse_flash.get_code_name
+  reverse_flash.code_name=("The Reverse Flash")
+  reverse_flash_code = reverse_flash.code_name
 
   #set and get real name
-  reverse_flash.set_real_name=("Eobard Thawne")
-  reverse_flash_real = reverse_flash.get_real_name
+  reverse_flash.real_name=("Eobard Thawne")
+  reverse_flash_real = reverse_flash.real_name
 
   #set and get alignment
-  reverse_flash.set_speedster_alignment=("evil")
-  reverse_flash_align = reverse_flash.get_speedster_alignment
+  reverse_flash.alignment=("evil")
+  reverse_flash_align = reverse_flash.alignment
 
   #set and get suit color
-  reverse_flash.set_suit_color=("Yellow")
-  reverse_flash_suit = reverse_flash.get_suit_color
+  reverse_flash.suit_color=("Yellow")
+  reverse_flash_suit = reverse_flash.suit_color
 
 
 #Explain Speedsters
@@ -117,39 +76,39 @@ puts "#{reverse_flash.inspect}\n\n"
   batman = Human.new
 
   #set and get code name
-  batman.set_code_name=("Batman")
-  batman_code = batman.get_code_name
+  batman.code_name=("Batman")
+  batman_code = batman.code_name
 
   #set and get real name
-  batman.set_real_name=("Bruce Wayne")
-  batman_real = batman.get_real_name
+  batman.real_name=("Bruce Wayne")
+  batman_real = batman.real_name
 
   #set and get origin
-  batman.set_human_origin=("his parents were murdered")
-  batman_origin = batman.get_human_origin
+  batman.origin=("his parents were murdered")
+  batman_origin = batman.origin
 
   #set and get weapon
-  batman.set_human_weapon=("batarangs")
-  batman_weapon = batman.get_human_weapon
+  batman.weapon=("batarangs")
+  batman_weapon = batman.weapon
 
   #create Green Arrow
   green_arrow = Human.new
 
   #set and get code name
-  green_arrow.set_code_name=("The Green Arrow")
-  green_arrow_code = green_arrow.get_code_name
+  green_arrow.code_name=("The Green Arrow")
+  green_arrow_code = green_arrow.code_name
 
   #set and get real name
-  green_arrow.set_real_name=("Oliver Queen")
-  green_arrow_real = green_arrow.get_real_name
+  green_arrow.real_name=("Oliver Queen")
+  green_arrow_real = green_arrow.real_name
 
   #set and get origin
-  green_arrow.set_human_origin=("stranded on an island")
-  green_arrow_origin = green_arrow.get_human_origin
+  green_arrow.origin=("stranded on an island")
+  green_arrow_origin = green_arrow.origin
 
   #set and get weapon
-  green_arrow.set_human_weapon=("a bow and arrow")
-  green_arrow_weapon = green_arrow.get_human_weapon
+  green_arrow.weapon=("a bow and arrow")
+  green_arrow_weapon = green_arrow.weapon
 
 #Explain Humans
 puts "#{batman_real} learned to fight crime after #{batman_origin}. He became #{batman_code}, and uses his custom #{batman_weapon} to attack criminals. After #{green_arrow_real} was #{green_arrow_origin}, he learned to use #{green_arrow_weapon} and became #{green_arrow_code}.\n\n"
