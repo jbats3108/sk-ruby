@@ -27,7 +27,7 @@ while message = socket.gets do
     server = message.split(":").last
 
     #send the message PONG : server.url back to the server to maintain connection.
-    puts "PONG #{server}"
+    socket.puts "PONG #{server}"
 
   #auto response if received message contains string "how are you?". Also prints it to terminal
   elsif message.match (/how are you?/)
