@@ -14,6 +14,19 @@ socket.puts "NICK #{nickname}"
 socket.puts "USER #{nickname} 0 * #{nickname}"
 socket.puts "JOIN #{channel}"
 
+
+#get list of inspirational quotes
+inspire_me = []
+
+list = File.open("quotes.txt")
+
+list.each_line do |line|
+
+  inspire_me << line
+
+end
+
+
 #while messages being sent
 while message = socket.gets do
 
@@ -34,6 +47,12 @@ while message = socket.gets do
   elsif message.match (/how are you?/)
     puts "PRIVMSG #{channel} :I am very well, thanks for asking. And you?"
     socket.puts "PRIVMSG #{channel} :I am very well, thanks for asking. And you?"
+
+  #if message received containing 'inspire', pick a random quote from the list in quotes.txt
+  elsif message.match (/inspire/)
+    puts "PRIVMSG #{channel} :#{inspire_me.sample}"
+    socket.puts "PRIVMSG #{channel} :#{inspire_me.sample}"
+
   end
 
 end
